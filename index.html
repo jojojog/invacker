@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Investment Tracker</title>
   <link rel="stylesheet" href="style.css">
   <script src="main.js"></script>
-  <link rel="manifest" href="manifest.json"> 
+  <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
-  <h1>Investments</h1>
-  
+  <h1 onclick="toggleAddInvestmentSection()">Investments</h1>
+
   <hr>
 
+
+  <div id="add-inv-section">
   <div class="new-container">
-  <select name="investment-types" id="inv-type">
-    <option value="stock">Stock</option>
-    <option value="mf">Mutual Fund</option>
-    <option value="fd">Fixed Deposit</option>
-    <option value="ppf">PPF</option>
-    <option value="ssy">SSY</option>
-  </select>
-  <input type="date" id="inv-date" placeholder="Date...">
-  <button id="add-inv-btn">+</button>
-</div>
-  <div class="new-container1">
-  <input type="text" id="inv-name" placeholder="Name...">
-  <input type="number" id="inv-amount" placeholder="Amount...">
+    <select name="investment-types" id="inv-type">
+      <option value="stock">Stock</option>
+      <option value="mf">Mutual Fund</option>
+      <option value="fd">Fixed Deposit</option>
+      <option value="ppf">PPF</option>
+      <option value="ssy">SSY</option>
+    </select>
+    <input type="date" id="inv-date" placeholder="Date...">
   </div>
-  
+  <div class="new-container">
+    <input type="text" id="inv-name" placeholder="Name...">
+    <input type="number" id="inv-amount" placeholder="Amount...">
+  </div>
+  <div class="new-container1">
+    <button id="add-inv-btn" class="button-85" role="button">+</button>
+  </div>
   <hr>
+</div>
 
   <div class="sort-container">
-    Sort By:
     <select id="sort-by" onchange="populateinvestmentList()">
       <option value="type">Type</option>
       <option value="name">Name</option>
@@ -44,18 +49,22 @@
   <ul id="investment-list"></ul>
 
   <hr>
-  Annual Interest Rate: <span id="air"></span>
+  <span id="air-title" onclick="toggleAIR()">Annual Interest Rate:</span> <span id="air"></span>
   <br><br>
-  <div class="new-container1">
-    <input type="number" id="invested-amount" placeholder="Principal...">
-    <input type="number" id="current-amount" placeholder="Current Amount...">
+  <div id="air-container">
+    <div class="new-container">
+      <input type="number" id="invested-amount" placeholder="Principal...">
+      <input type="number" id="current-amount" placeholder="Current Amount...">
     </div>
     <br>
-    <div class="new-container1">
+    <div class="new-container">
       <input type="date" id="investment-date" placeholder="Date...">
-    <button id="calc-air-btn" onclick="calculateAnnualInterestRate()">=</button>
+      <button class="button-85" role="button" onclick="calculateAnnualInterestRate()">=</button>
+    </div>
   </div>
+
 
   <script src="script.js"></script>
 </body>
+
 </html>
