@@ -2,6 +2,7 @@ const investmentListEl = document.getElementById("investment-list");
 const addInvestmentBtn = document.getElementById('add-inv-btn');
 const addInvSection = document.getElementById("add-inv-section");
 const airContainer = document.getElementById("air-container");
+const investmentSummary = document.getElementById("investment-summary");
 
 let investmentList;
 let isVisible = false;
@@ -93,7 +94,7 @@ function sort() {
 function populateinvestmentList() {
   investmentListEl.innerHTML = ""; // Clear existing list items
 
-  const sortedInvestmentList = sort();
+  sort();
 
   investmentList.forEach((investmentItem) => {
     const newListItem = document.createElement("li");
@@ -135,6 +136,27 @@ function populateinvestmentList() {
     investmentListEl.appendChild(newListItem);
   });
 
+  const summary = investmentList.reduce((acc, current) => {
+    if (acc[getTypeValue(current.type)]) {
+      acc[getTypeValue(current.type)] += Number(current.amount);
+    } else {
+      acc[getTypeValue(current.type)] = Number(current.amount);
+    }
+    return acc;
+  }, {});
+  
+  investmentSummary.innerHTML = "";
+  Object.entries(summary).forEach(([type, amount]) => {
+    const listItem = createListItem(type, amount);
+    investmentSummary.appendChild(listItem);
+  });
+
+}
+
+function createListItem(type, amount) {
+  const listItem = document.createElement("li");
+  listItem.textContent = `${type}: ${amount}`;
+  return listItem;
 }
 
 // Event listener for adding an Investment on button click
