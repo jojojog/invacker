@@ -102,6 +102,7 @@ function populateinvestmentList() {
     const actionDiv = document.createElement("div");
     const removeBtn = document.createElement("button");
     removeBtn.innerText = "X";
+    removeBtn.className = "inv-btn";
     removeBtn.addEventListener("click", () => {
       removeInvestment(investmentList.indexOf(investmentItem));
     });
