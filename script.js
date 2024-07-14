@@ -129,12 +129,10 @@ addInvestmentBtn.addEventListener('click', () => {
   const newInvestment = { type: newInvTypeValue, name: newInvNameValue, amount: newInvAmountValue, date: newInvDateValue };
   
   if (newInvestment) {
-    alert(newInvestment);
     addInvestment(newInvestment);
-    newInvType.reset();
-    newInvName.reset();
-    newInvAmount.reset();
-    newInvDate.reset();
+    newInvName.value = "";
+    newInvAmount.value = "";
+    newInvDate.value = "";
   }
 });
 
@@ -158,8 +156,11 @@ function calculateAnnualInterestRate() {
 
   // 4. Populate the annual interest rate as a percentage
   const air = annualInterestRate * 100;
-  document.getElementById('air').innerText = air.toFixed(2);
+  document.getElementById('air').innerText = air.toFixed(2) + '%';
 
+  document.getElementById('investment-date').value = "";
+  document.getElementById('invested-amount').value = "";
+  document.getElementById('current-amount').value = "";
 }
 
 // Load Investment list on page load
