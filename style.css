@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#inv-type, #inv-name, #inv-amount, #inv-date, #add-inv-btn {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+}
+
+#investment-list {
+  list-style: none;
+  padding: 0;
+  max-width: 100vw;
+}
+
+#investment-list li {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 20px;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#sort-by {
+  width: 100px;
+  height: 20px;
+}
+
+.air-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 20px;
+  gap: 15px;
+}

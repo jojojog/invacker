@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  <link rel="manifest" href="manifest.json"> 
+</head>
+<body>
+  <h1>Investments</h1>
+  
+  <hr>
+
+  <select name="investment-types" id="inv-type">
+    <option value="stock">Stock</option>
+    <option value="mf">Mutual Fund</option>
+    <option value="fd">Fixed Deposit</option>
+    <option value="ppf">PPF</option>
+    <option value="ssy">SSY</option>
+  </select>
+  <button id="add-inv-btn">+</button>
+  <br>
+  <input type="text" id="inv-name" placeholder="Name...">
+  <input type="number" id="inv-amount" placeholder="Amount...">
+  <input type="date" id="inv-date" placeholder="Date...">
+  
+  <hr>
+
+  <div class="sort-container">
+    Sort By:
+    <select id="sort-by" onchange="populateinvestmentList()">
+      <option value="type">Type</option>
+      <option value="name">Name</option>
+      <option value="amount">Amount</option>
+      <option value="date" selected>Date</option>
+    </select>
+  </div>
+
+  <ul id="investment-list"></ul>
+
+  <hr>
+  Annual Interest Rate: <span id="air"></span> %
+  <br><br>
+  <div class="air-container">
+    <input type="date" id="investment-date" placeholder="Date...">
+    <input type="number" id="invested-amount" placeholder="Principal...">
+    <input type="number" id="current-amount" placeholder="Current Amount...">
+    <button onclick="calculateAnnualInterestRate()">=</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
