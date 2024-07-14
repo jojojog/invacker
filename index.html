@@ -20,11 +20,12 @@
     <option value="ppf">PPF</option>
     <option value="ssy">SSY</option>
   </select>
-  <button id="add-inv-btn">+</button>
-  <br>
+  <div class="new-container">
   <input type="text" id="inv-name" placeholder="Name...">
   <input type="number" id="inv-amount" placeholder="Amount...">
   <input type="date" id="inv-date" placeholder="Date...">
+  <button id="add-inv-btn">+</button>
+  </div>
   
   <hr>
 
@@ -47,7 +48,7 @@
     <input type="date" id="investment-date" placeholder="Date...">
     <input type="number" id="invested-amount" placeholder="Principal...">
     <input type="number" id="current-amount" placeholder="Current Amount...">
-    <button onclick="calculateAnnualInterestRate()">=</button>
+    <button id="calc-air-btn" onclick="calculateAnnualInterestRate()">=</button>
   </div>
 
   <script src="script.js"></script>
