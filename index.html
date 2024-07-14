@@ -13,7 +13,7 @@
   
   <hr>
 
-  <div class="new-container1">
+  <div class="new-container">
   <select name="investment-types" id="inv-type">
     <option value="stock">Stock</option>
     <option value="mf">Mutual Fund</option>
@@ -22,11 +22,11 @@
     <option value="ssy">SSY</option>
   </select>
   <input type="date" id="inv-date" placeholder="Date...">
+  <button id="add-inv-btn">+</button>
 </div>
-  <div class="new-container">
+  <div class="new-container1">
   <input type="text" id="inv-name" placeholder="Name...">
   <input type="number" id="inv-amount" placeholder="Amount...">
-  <button id="add-inv-btn">+</button>
   </div>
   
   <hr>
@@ -44,17 +44,16 @@
   <ul id="investment-list"></ul>
 
   <hr>
-  Annual Interest Rate 
+  Annual Interest Rate: <span id="air"></span>
   <br><br>
   <div class="new-container1">
-    <input type="date" id="investment-date" placeholder="Date...">
     <input type="number" id="invested-amount" placeholder="Principal...">
+    <input type="number" id="current-amount" placeholder="Current Amount...">
     </div>
     <br>
-    <div class="air-container">
-    <input type="number" id="current-amount" placeholder="Current Amount...">
+    <div class="new-container1">
+      <input type="date" id="investment-date" placeholder="Date...">
     <button id="calc-air-btn" onclick="calculateAnnualInterestRate()">=</button>
-    <span id="air"></span>
   </div>
 
   <script src="script.js"></script>
