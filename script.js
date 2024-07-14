@@ -1,8 +1,31 @@
 const investmentListEl = document.getElementById("investment-list");
-
 const addInvestmentBtn = document.getElementById('add-inv-btn');
+const addInvSection = document.getElementById("add-inv-section");
+const airContainer = document.getElementById("air-container");
 
 let investmentList;
+let isVisible = false;
+let airVisible = false;
+
+function toggleAddInvestmentSection() {
+  if (isVisible) {
+    addInvSection.style.display = "none";
+    isVisible = false;
+  } else {
+    addInvSection.style.display = "block";
+    isVisible = true;
+  }
+}
+
+function toggleAIR() {
+  if (airVisible) {
+    airContainer.style.display = "none";
+    airVisible = false;
+  } else {
+    airContainer.style.display = "block";
+    airVisible = true;
+  }
+}
 
 // Function to load Investment list from local storage (on page load or refresh)
 function loadInvestmentList() {
